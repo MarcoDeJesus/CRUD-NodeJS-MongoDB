@@ -18,7 +18,8 @@ router.post("/add", (req, res) => {
 
     course.save((err, doc) => {
         if(!err){
-            res.redirect("/courses/list");
+            //res.redirect("/courses/list");
+            res.json({ message: "successful", status: "OK"});
         }else{
             res.send("Error Ocurred.");
         }
