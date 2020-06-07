@@ -5,6 +5,8 @@ const path = require("path");
 const expressHandlebars = require("express-handlebars");
 const bodyparser = require  ("body-parser");
 
+const CourseController = require("./controllers/courses");
+
 application.use(bodyparser.urlencoded({
     extended : true
 }));
@@ -23,6 +25,8 @@ application.get("/", (req, res) => {
     //res.send('<h1>Hello World</h1>');
     res.render("index", {})
 });
+
+application.use("/courses", CourseController);
 
 application.listen("3000", () => {
     console.log("Server started.");
