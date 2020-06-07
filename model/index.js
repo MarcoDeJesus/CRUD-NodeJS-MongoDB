@@ -7,3 +7,5 @@ mongoose.connect("mongodb://localhost:27017/Edureka", { useNewUrlParser: true },
         console.log("Error connecting to database.");
     }
 }); 
+
+const Course = require("./course_model");
