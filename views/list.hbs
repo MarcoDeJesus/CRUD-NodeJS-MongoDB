@@ -5,12 +5,14 @@
 <table>
     <tr>
         <th>ID</th>
-        <td>Name</td>
+        <th>Name</th>
+        <th>Fee</th>
     </tr>
     {{#each data}}
     <tr>
         <td>{{this.courseId}}</td>
         <td>{{this.courseName}}</td>
+        <td>{{this.courseFee}}</td>
     </tr>
     {{/each}}
 </table>
