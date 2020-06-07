@@ -5,6 +5,9 @@ const path = require("path");
 const expressHandlebars = require("express-handlebars");
 const bodyparser = require  ("body-parser");
 
+const Handlebars = require('handlebars')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+
 const CourseController = require("./controllers/courses");
 
 application.use(bodyparser.urlencoded({
@@ -17,7 +20,7 @@ application.engine("hbs", expressHandlebars({
     extname: "hbs",
     defaultLayout : "mainlayout",
     layoutsDir : __dirname + "/views/layouts",
-    allowedProtoMethods : true
+    handlebars : allowInsecurePrototypeAccess(Handlebars)
 }));
 
 application.set("view engine", "hbs");
