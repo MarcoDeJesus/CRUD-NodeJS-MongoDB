@@ -15,7 +15,7 @@ router.get("/list", (req, res) => {
     CourseModel.find((err, docs) => {
         if(!err){
             console.log(docs);
-            res.send("Course Controller!");
+            res.render("list", { data : docs });
         }else{
             res.send("Error");
         }

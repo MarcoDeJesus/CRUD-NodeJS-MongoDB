@@ -16,7 +16,8 @@ application.set('views', path.join(__dirname, "/views/"));
 application.engine("hbs", expressHandlebars({
     extname: "hbs",
     defaultLayout : "mainlayout",
-    layoutsDir : __dirname + "/views/layouts"
+    layoutsDir : __dirname + "/views/layouts",
+    allowedProtoMethods : true
 }));
 
 application.set("view engine", "hbs");
